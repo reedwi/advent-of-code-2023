@@ -19,7 +19,6 @@ def part_one():
     return sum(total_points)
 
 def part_two():
-    winning_count = defaultdict(int)
     collected_cards = defaultdict(int)
     for i, line in enumerate(values, start=1):
         remove_card_num = line.split(':')[1]
@@ -31,15 +30,9 @@ def part_two():
         for num in my_card:
             if num in winning_nums:
                 count += 1
-        winning_count[i] = count
-        collected_cards[i] = 1
-
-    for i in range(1, len(values) + 1):
-        count = winning_count[i]
-        for j in range(1, count + 1):
-            next_card = i + j
-            if next_card <= len(values):
-                collected_cards[next_card] += collected_cards[i]
+        
+        for j in range(count):
+            collected_cards[j + i + 1] += collected_cards[i]
 
     return sum(collected_cards.values())
 
