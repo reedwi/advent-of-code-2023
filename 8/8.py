@@ -14,8 +14,6 @@ for coord in coords:
     right = coord[1].split(',')[1].strip().replace(')', '')
     location_map[location] = (left, right)
 
-# values = [(game.split()[0], game.split()[1]) for game in lines]
-# possible_cards = ['J', '2', '3', '4', '5', '6', '7', '8', '9', 'T', 'Q', 'K', 'A']
 
 def part_one():
     AAA = 'AAA'
