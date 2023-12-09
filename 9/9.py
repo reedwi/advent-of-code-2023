@@ -1,4 +1,3 @@
-from collections import Counter, defaultdict
 
 with open('9/9.txt', 'r') as file:
     data = file.read().strip()
