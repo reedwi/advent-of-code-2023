@@ -100,6 +100,8 @@ def part_two():
         min_distances.append(distance)
 
     return sum(min_distances)
+
+
 print(part_one())
 print(part_two())
 
