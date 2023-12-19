@@ -62,23 +62,6 @@ def hex_to_instructions(hex_code):
     return direction, distance
 
 
-def shoelace(points):
-  area = 0
-  for (y1, x1), (y2, x2) in zip(points, points[1:] + [points[0]]):
-    area += x1 * y2 - x2 * y1
-  return area / 2
-
-def area(commands):
-  y, x = 0, 0
-  d = {"R": (0, 1), "L": (0, -1), "U": (-1, 0), "D": (1, 0)}
-  points = [(y, x)]
-  for vdir, vlen in commands:
-    dy, dx = d[vdir]
-    y += dy * vlen
-    x += dx * vlen
-    points.append((y, x))
-  return int(shoelace(points) + sum(vlen for vdir, vlen in commands) / 2 + 1)
-
 def part_two():
     path = [(0,0)]
     pos = 0
