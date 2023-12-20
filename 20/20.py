@@ -82,9 +82,7 @@ def part_one():
 
             todo = new_todo
 
-    answer = num_low * num_high
-
-    print(answer)
+    return num_low * num_high
 
 def part_two():
     pass
