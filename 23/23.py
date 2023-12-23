@@ -10,6 +10,8 @@ def part_one():
     n = len(vals)
     m = len(vals[0])
 
+    ending_point = (n-1, m-2)
+
     edges = defaultdict(set)
     for r, row in enumerate(vals):
         for c, v in enumerate(row):
@@ -37,7 +39,7 @@ def part_one():
         if d == -1:
             visited.remove((r, c))
             continue
-        if (r, c) == (n - 1, m - 2):
+        if (r, c) == ending_point:
             best = max(best, d)
             continue
         if (r, c) in visited:
